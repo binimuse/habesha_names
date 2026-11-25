@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "264352122963",
+    "project_id": "habesha-baby-names",
+    "storage_bucket": "habesha-baby-names.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264352122963:android:7de994870e99d888bc1ea6",
+        "android_client_info": {
+          "package_name": "com.codewave.et.habesha_names"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAN82eXpXrqQ7-bxG0GmiKpwlNUDx1yXR4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

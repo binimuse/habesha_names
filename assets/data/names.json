@@ -1,0 +1,1519 @@
+{
+  "version": 2,
+  "count": 35,
+  "names": [
+    {
+      "id": "abebe",
+      "name_latin": "Abebe",
+      "name_geez": "አበበ",
+      "spellings": [
+        "Abebe",
+        "Abbebe"
+      ],
+      "gender": "boy",
+      "languages": [
+        "amharic"
+      ],
+      "faiths": [
+        "neutral"
+      ],
+      "meaning_en": "He blossomed, he flourished",
+      "meaning_am": "አበበ፣ ፈካ",
+      "themes": [
+        "nature"
+      ],
+      "pronunciation": "ah-BEH-beh",
+      "audio_url": null,
+      "syllables": 3,
+      "easy_abroad": true,
+      "origin_en": "Amharic",
+      "origin_am": "አማርኛ",
+      "nicknames": [
+        "Abe"
+      ],
+      "similar": [
+        "tesfaye"
+      ],
+      "famous": [
+        "Abebe Bikila"
+      ],
+      "verified": false,
+      "popularity": 75,
+      "modern": false,
+      "rarity": "unique",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "ahmed",
+      "name_latin": "Ahmed",
+      "name_geez": "አሕመድ",
+      "spellings": [
+        "Ahmed",
+        "Ahmad"
+      ],
+      "gender": "boy",
+      "languages": [
+        "amharic",
+        "oromo",
+        "tigrinya"
+      ],
+      "faiths": [
+        "muslim"
+      ],
+      "meaning_en": "Most praised",
+      "meaning_am": "እጅግ የተመሰገነ",
+      "themes": [
+        "faith"
+      ],
+      "pronunciation": "AH-med",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Arabic",
+      "origin_am": "ዓረብኛ",
+      "nicknames": [],
+      "similar": [
+        "seid",
+        "kedir"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 84,
+      "modern": false,
+      "rarity": "unique",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "amanuel",
+      "name_latin": "Amanuel",
+      "name_geez": "አማኑኤል",
+      "spellings": [
+        "Amanuel",
+        "Emmanuel",
+        "Amanueal"
+      ],
+      "gender": "boy",
+      "languages": [
+        "amharic",
+        "tigrinya"
+      ],
+      "faiths": [
+        "orthodox",
+        "protestant",
+        "catholic"
+      ],
+      "meaning_en": "God is with us",
+      "meaning_am": "እግዚአብሔር ከእኛ ጋር ነው",
+      "themes": [
+        "faith"
+      ],
+      "pronunciation": "ah-mah-noo-EL",
+      "audio_url": null,
+      "syllables": 4,
+      "easy_abroad": true,
+      "origin_en": "Ge'ez (from Hebrew)",
+      "origin_am": "ግዕዝ (ከዕብራይስጥ)",
+      "nicknames": [
+        "Amanu",
+        "Ami"
+      ],
+      "similar": [
+        "dawit",
+        "yonas"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 88,
+      "modern": false,
+      "rarity": "popular",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "amina",
+      "name_latin": "Amina",
+      "name_geez": "አሚና",
+      "spellings": [
+        "Amina",
+        "Aminah",
+        "Ameena"
+      ],
+      "gender": "girl",
+      "languages": [
+        "amharic",
+        "oromo",
+        "tigrinya"
+      ],
+      "faiths": [
+        "muslim"
+      ],
+      "meaning_en": "Trustworthy, faithful",
+      "meaning_am": "ታማኝ",
+      "themes": [
+        "virtue"
+      ],
+      "pronunciation": "ah-MEE-nah",
+      "audio_url": null,
+      "syllables": 3,
+      "easy_abroad": true,
+      "origin_en": "Arabic",
+      "origin_am": "ዓረብኛ",
+      "nicknames": [
+        "Ami"
+      ],
+      "similar": [
+        "nuria",
+        "hayat"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 80,
+      "modern": false,
+      "rarity": "unique",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "betelhem",
+      "name_latin": "Betelhem",
+      "name_geez": "ቤተልሔም",
+      "spellings": [
+        "Betelhem",
+        "Bethlehem",
+        "Betlehem"
+      ],
+      "gender": "girl",
+      "languages": [
+        "amharic",
+        "tigrinya"
+      ],
+      "faiths": [
+        "orthodox",
+        "protestant",
+        "catholic"
+      ],
+      "meaning_en": "House of bread (Bethlehem)",
+      "meaning_am": "የእንጀራ ቤት",
+      "themes": [
+        "faith"
+      ],
+      "pronunciation": "beh-tel-HEM",
+      "audio_url": null,
+      "syllables": 3,
+      "easy_abroad": true,
+      "origin_en": "Ge'ez (from Hebrew)",
+      "origin_am": "ግዕዝ (ከዕብራይስጥ)",
+      "nicknames": [
+        "Beti",
+        "Betty"
+      ],
+      "similar": [
+        "tsion",
+        "mekdes"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 82,
+      "modern": false,
+      "rarity": "unique",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "biftu",
+      "name_latin": "Biftu",
+      "name_geez": "ቢፍቱ",
+      "spellings": [
+        "Biftu",
+        "Biftuu"
+      ],
+      "gender": "girl",
+      "languages": [
+        "oromo"
+      ],
+      "faiths": [
+        "neutral"
+      ],
+      "meaning_en": "Sunrise, sunlight",
+      "meaning_am": "የፀሐይ ብርሃን",
+      "themes": [
+        "nature",
+        "light"
+      ],
+      "pronunciation": "BIF-too",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Oromo",
+      "origin_am": "ኦሮምኛ",
+      "nicknames": [],
+      "similar": [
+        "tsehay",
+        "chaltu"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 56,
+      "modern": false,
+      "rarity": "rare",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "birhan",
+      "name_latin": "Birhan",
+      "name_geez": "ብርሃን",
+      "spellings": [
+        "Birhan",
+        "Berhan",
+        "Brhan",
+        "Birhane"
+      ],
+      "gender": "unisex",
+      "languages": [
+        "amharic",
+        "tigrinya"
+      ],
+      "faiths": [
+        "neutral"
+      ],
+      "meaning_en": "Light",
+      "meaning_am": "ብርሃን",
+      "themes": [
+        "light"
+      ],
+      "pronunciation": "bir-HAHN",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Amharic (from Ge'ez)",
+      "origin_am": "አማርኛ (ከግዕዝ)",
+      "nicknames": [
+        "Biri"
+      ],
+      "similar": [
+        "nuria",
+        "tsehay"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 66,
+      "modern": true,
+      "rarity": "rare",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T15:42:05.000Z"
+    },
+    {
+      "id": "chaltu",
+      "name_latin": "Chaltu",
+      "name_geez": "ጫልቱ",
+      "spellings": [
+        "Chaltu",
+        "Caaltuu",
+        "Chaltuu"
+      ],
+      "gender": "girl",
+      "languages": [
+        "oromo"
+      ],
+      "faiths": [
+        "neutral"
+      ],
+      "meaning_en": "She surpasses others",
+      "meaning_am": "ከሁሉ የምትበልጥ",
+      "themes": [
+        "virtue"
+      ],
+      "pronunciation": "CHAHL-too",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": false,
+      "origin_en": "Oromo",
+      "origin_am": "ኦሮምኛ",
+      "nicknames": [],
+      "similar": [
+        "biftu",
+        "gemechu"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 54,
+      "modern": false,
+      "rarity": "rare",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "dawit",
+      "name_latin": "Dawit",
+      "name_geez": "ዳዊት",
+      "spellings": [
+        "Dawit",
+        "Dawitt",
+        "Dawet"
+      ],
+      "gender": "boy",
+      "languages": [
+        "amharic",
+        "tigrinya"
+      ],
+      "faiths": [
+        "orthodox",
+        "protestant",
+        "catholic"
+      ],
+      "meaning_en": "Beloved (from David)",
+      "meaning_am": "የተወደደ",
+      "themes": [
+        "faith"
+      ],
+      "pronunciation": "dah-WEET",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Ge'ez (from Hebrew)",
+      "origin_am": "ግዕዝ (ከዕብራይስጥ)",
+      "nicknames": [
+        "Dawi"
+      ],
+      "similar": [
+        "yonas",
+        "yared"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 85,
+      "modern": false,
+      "rarity": "popular",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "eyob",
+      "name_latin": "Eyob",
+      "name_geez": "ኢዮብ",
+      "spellings": [
+        "Eyob",
+        "Iyob",
+        "Eyoab"
+      ],
+      "gender": "boy",
+      "languages": [
+        "amharic",
+        "tigrinya"
+      ],
+      "faiths": [
+        "orthodox",
+        "protestant",
+        "catholic"
+      ],
+      "meaning_en": "From Job, the patient one",
+      "meaning_am": "ከኢዮብ — ትዕግሥተኛው",
+      "themes": [
+        "faith",
+        "virtue"
+      ],
+      "pronunciation": "ee-YOHB",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Ge'ez (from Hebrew)",
+      "origin_am": "ግዕዝ (ከዕብራይስጥ)",
+      "nicknames": [],
+      "similar": [
+        "yonas",
+        "nahom"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 70,
+      "modern": false,
+      "rarity": "rare",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "fikir",
+      "name_latin": "Fikir",
+      "name_geez": "ፍቅር",
+      "spellings": [
+        "Fikir",
+        "Fiker",
+        "Fikr"
+      ],
+      "gender": "unisex",
+      "languages": [
+        "amharic"
+      ],
+      "faiths": [
+        "neutral"
+      ],
+      "meaning_en": "Love",
+      "meaning_am": "ፍቅር",
+      "themes": [
+        "love"
+      ],
+      "pronunciation": "fee-KIR",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Amharic",
+      "origin_am": "አማርኛ",
+      "nicknames": [
+        "Fiki"
+      ],
+      "similar": [
+        "selam",
+        "birhan"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 68,
+      "modern": true,
+      "rarity": "rare",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T15:42:05.000Z"
+    },
+    {
+      "id": "gemechu",
+      "name_latin": "Gemechu",
+      "name_geez": "ገመቹ",
+      "spellings": [
+        "Gemechu",
+        "Gammachuu",
+        "Gemachu"
+      ],
+      "gender": "boy",
+      "languages": [
+        "oromo"
+      ],
+      "faiths": [
+        "neutral"
+      ],
+      "meaning_en": "Joy, happiness",
+      "meaning_am": "ደስታ",
+      "themes": [
+        "joy"
+      ],
+      "pronunciation": "geh-MEH-choo",
+      "audio_url": null,
+      "syllables": 3,
+      "easy_abroad": false,
+      "origin_en": "Oromo",
+      "origin_am": "ኦሮምኛ",
+      "nicknames": [
+        "Gemu"
+      ],
+      "similar": [
+        "biftu",
+        "chaltu"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 58,
+      "modern": false,
+      "rarity": "rare",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "haile",
+      "name_latin": "Haile",
+      "name_geez": "ኃይሌ",
+      "spellings": [
+        "Haile",
+        "Hayle"
+      ],
+      "gender": "boy",
+      "languages": [
+        "amharic",
+        "tigrinya"
+      ],
+      "faiths": [
+        "neutral"
+      ],
+      "meaning_en": "My power, my strength",
+      "meaning_am": "ኃይሌ — ብርታቴ",
+      "themes": [
+        "strength"
+      ],
+      "pronunciation": "HAI-leh",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Amharic (from Ge'ez)",
+      "origin_am": "አማርኛ (ከግዕዝ)",
+      "nicknames": [],
+      "similar": [
+        "tesfaye"
+      ],
+      "famous": [
+        "Haile Gebrselassie"
+      ],
+      "verified": false,
+      "popularity": 70,
+      "modern": false,
+      "rarity": "rare",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "hana",
+      "name_latin": "Hana",
+      "name_geez": "ሐና",
+      "spellings": [
+        "Hana",
+        "Hanna",
+        "Hannah",
+        "Hanah"
+      ],
+      "gender": "girl",
+      "languages": [
+        "amharic",
+        "tigrinya"
+      ],
+      "faiths": [
+        "orthodox",
+        "protestant",
+        "catholic"
+      ],
+      "meaning_en": "Grace, favour",
+      "meaning_am": "ጸጋ",
+      "themes": [
+        "faith",
+        "virtue"
+      ],
+      "pronunciation": "HAH-nah",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Ge'ez (from Hebrew)",
+      "origin_am": "ግዕዝ (ከዕብራይስጥ)",
+      "nicknames": [],
+      "similar": [
+        "lidya",
+        "selam"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 83,
+      "modern": false,
+      "rarity": "unique",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "hayat",
+      "name_latin": "Hayat",
+      "name_geez": "ሀያት",
+      "spellings": [
+        "Hayat",
+        "Hayet"
+      ],
+      "gender": "girl",
+      "languages": [
+        "amharic",
+        "oromo",
+        "tigrinya"
+      ],
+      "faiths": [
+        "muslim"
+      ],
+      "meaning_en": "Life",
+      "meaning_am": "ሕይወት",
+      "themes": [
+        "life"
+      ],
+      "pronunciation": "hah-YAHT",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Arabic",
+      "origin_am": "ዓረብኛ",
+      "nicknames": [],
+      "similar": [
+        "hiwot",
+        "amina"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 76,
+      "modern": false,
+      "rarity": "unique",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "hiwot",
+      "name_latin": "Hiwot",
+      "name_geez": "ሕይወት",
+      "spellings": [
+        "Hiwot",
+        "Heywet",
+        "Hiywet",
+        "Hywet"
+      ],
+      "gender": "girl",
+      "languages": [
+        "amharic",
+        "tigrinya"
+      ],
+      "faiths": [
+        "neutral"
+      ],
+      "meaning_en": "Life",
+      "meaning_am": "ሕይወት፣ ኑሮ",
+      "themes": [
+        "life"
+      ],
+      "pronunciation": "HEE-wot",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Amharic (from Ge'ez)",
+      "origin_am": "አማርኛ (ከግዕዝ)",
+      "nicknames": [
+        "Hiwi"
+      ],
+      "similar": [
+        "hayat",
+        "selam"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 90,
+      "modern": true,
+      "rarity": "popular",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T15:42:05.000Z"
+    },
+    {
+      "id": "kedir",
+      "name_latin": "Kedir",
+      "name_geez": "ከድር",
+      "spellings": [
+        "Kedir",
+        "Kadir",
+        "Khidir"
+      ],
+      "gender": "boy",
+      "languages": [
+        "amharic",
+        "oromo"
+      ],
+      "faiths": [
+        "muslim"
+      ],
+      "meaning_en": "Green, flourishing (after al-Khidr)",
+      "meaning_am": "ለምለም፣ አረንጓዴ",
+      "themes": [
+        "faith",
+        "nature"
+      ],
+      "pronunciation": "KEH-dir",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Arabic",
+      "origin_am": "ዓረብኛ",
+      "nicknames": [],
+      "similar": [
+        "ahmed",
+        "seid"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 60,
+      "modern": false,
+      "rarity": "rare",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "kidist",
+      "name_latin": "Kidist",
+      "name_geez": "ቅድስት",
+      "spellings": [
+        "Kidist",
+        "Qidist",
+        "Kedist"
+      ],
+      "gender": "girl",
+      "languages": [
+        "amharic"
+      ],
+      "faiths": [
+        "orthodox"
+      ],
+      "meaning_en": "Holy one (feminine)",
+      "meaning_am": "ቅድስት — የተቀደሰች",
+      "themes": [
+        "faith"
+      ],
+      "pronunciation": "kee-DIST",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Amharic (from Ge'ez)",
+      "origin_am": "አማርኛ (ከግዕዝ)",
+      "nicknames": [
+        "Kiki",
+        "Kidu"
+      ],
+      "similar": [
+        "mekdes",
+        "meron"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 78,
+      "modern": false,
+      "rarity": "unique",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "lidya",
+      "name_latin": "Lidya",
+      "name_geez": "ልድያ",
+      "spellings": [
+        "Lidya",
+        "Lydia",
+        "Lidia"
+      ],
+      "gender": "girl",
+      "languages": [
+        "amharic",
+        "tigrinya"
+      ],
+      "faiths": [
+        "orthodox",
+        "protestant",
+        "catholic"
+      ],
+      "meaning_en": "Woman of Lydia",
+      "meaning_am": "ከልድያ የመጣች",
+      "themes": [
+        "faith"
+      ],
+      "pronunciation": "LEED-yah",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Greek (biblical)",
+      "origin_am": "ግሪክ (መጽሐፍ ቅዱሳዊ)",
+      "nicknames": [
+        "Lidu"
+      ],
+      "similar": [
+        "hana",
+        "betelhem"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 72,
+      "modern": true,
+      "rarity": "unique",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T15:42:05.000Z"
+    },
+    {
+      "id": "mehari",
+      "name_latin": "Mehari",
+      "name_geez": "መሐሪ",
+      "spellings": [
+        "Mehari",
+        "Mehary",
+        "Meharie"
+      ],
+      "gender": "boy",
+      "languages": [
+        "tigrinya",
+        "amharic"
+      ],
+      "faiths": [
+        "neutral"
+      ],
+      "meaning_en": "Merciful",
+      "meaning_am": "መሐሪ — ርኅሩኅ",
+      "themes": [
+        "virtue",
+        "faith"
+      ],
+      "pronunciation": "meh-HAH-ree",
+      "audio_url": null,
+      "syllables": 3,
+      "easy_abroad": true,
+      "origin_en": "Tigrinya (from Ge'ez)",
+      "origin_am": "ትግርኛ (ከግዕዝ)",
+      "nicknames": [],
+      "similar": [
+        "senait",
+        "nahom"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 58,
+      "modern": false,
+      "rarity": "rare",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "mekdes",
+      "name_latin": "Mekdes",
+      "name_geez": "መቅደስ",
+      "spellings": [
+        "Mekdes",
+        "Meqdes",
+        "Mekdas"
+      ],
+      "gender": "girl",
+      "languages": [
+        "amharic"
+      ],
+      "faiths": [
+        "orthodox"
+      ],
+      "meaning_en": "Sanctuary, holy place",
+      "meaning_am": "መቅደስ — ቅዱስ ስፍራ",
+      "themes": [
+        "faith"
+      ],
+      "pronunciation": "mek-DES",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Amharic (from Ge'ez)",
+      "origin_am": "አማርኛ (ከግዕዝ)",
+      "nicknames": [
+        "Meki"
+      ],
+      "similar": [
+        "kidist",
+        "tsion"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 74,
+      "modern": false,
+      "rarity": "unique",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "meron",
+      "name_latin": "Meron",
+      "name_geez": "ሜሮን",
+      "spellings": [
+        "Meron",
+        "Miron"
+      ],
+      "gender": "girl",
+      "languages": [
+        "amharic",
+        "tigrinya"
+      ],
+      "faiths": [
+        "orthodox"
+      ],
+      "meaning_en": "Holy anointing oil (chrism)",
+      "meaning_am": "ቅዱስ ቅባት",
+      "themes": [
+        "faith"
+      ],
+      "pronunciation": "meh-ROHN",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Ge'ez (from Greek)",
+      "origin_am": "ግዕዝ (ከግሪክ)",
+      "nicknames": [
+        "Miri"
+      ],
+      "similar": [
+        "kidist",
+        "mekdes"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 80,
+      "modern": false,
+      "rarity": "unique",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "nahom",
+      "name_latin": "Nahom",
+      "name_geez": "ናሆም",
+      "spellings": [
+        "Nahom",
+        "Nahum",
+        "Nahome"
+      ],
+      "gender": "boy",
+      "languages": [
+        "amharic",
+        "tigrinya"
+      ],
+      "faiths": [
+        "orthodox",
+        "protestant",
+        "catholic"
+      ],
+      "meaning_en": "Comfort, consolation",
+      "meaning_am": "መጽናናት",
+      "themes": [
+        "faith",
+        "hope"
+      ],
+      "pronunciation": "nah-HOHM",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Ge'ez (from Hebrew)",
+      "origin_am": "ግዕዝ (ከዕብራይስጥ)",
+      "nicknames": [],
+      "similar": [
+        "yonas",
+        "amanuel"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 76,
+      "modern": true,
+      "rarity": "unique",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T15:42:05.000Z"
+    },
+    {
+      "id": "netsanet",
+      "name_latin": "Netsanet",
+      "name_geez": "ነፃነት",
+      "spellings": [
+        "Netsanet",
+        "Nesanet",
+        "Netsannet"
+      ],
+      "gender": "unisex",
+      "languages": [
+        "amharic"
+      ],
+      "faiths": [
+        "neutral"
+      ],
+      "meaning_en": "Freedom",
+      "meaning_am": "ነፃነት",
+      "themes": [
+        "hope",
+        "virtue"
+      ],
+      "pronunciation": "neh-tsah-NET",
+      "audio_url": null,
+      "syllables": 3,
+      "easy_abroad": false,
+      "origin_en": "Amharic",
+      "origin_am": "አማርኛ",
+      "nicknames": [
+        "Netsi"
+      ],
+      "similar": [
+        "fikir",
+        "tesfaye"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 55,
+      "modern": true,
+      "rarity": "rare",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T15:42:05.000Z"
+    },
+    {
+      "id": "nuria",
+      "name_latin": "Nuria",
+      "name_geez": "ኑሪያ",
+      "spellings": [
+        "Nuria",
+        "Nuriya",
+        "Nouria"
+      ],
+      "gender": "girl",
+      "languages": [
+        "amharic",
+        "oromo"
+      ],
+      "faiths": [
+        "muslim"
+      ],
+      "meaning_en": "Light",
+      "meaning_am": "ብርሃን",
+      "themes": [
+        "light"
+      ],
+      "pronunciation": "NOOR-ee-yah",
+      "audio_url": null,
+      "syllables": 3,
+      "easy_abroad": true,
+      "origin_en": "Arabic",
+      "origin_am": "ዓረብኛ",
+      "nicknames": [],
+      "similar": [
+        "amina",
+        "birhan"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 70,
+      "modern": false,
+      "rarity": "rare",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "seid",
+      "name_latin": "Seid",
+      "name_geez": "ሰይድ",
+      "spellings": [
+        "Seid",
+        "Sayid",
+        "Seyid",
+        "Said"
+      ],
+      "gender": "boy",
+      "languages": [
+        "amharic",
+        "oromo"
+      ],
+      "faiths": [
+        "muslim"
+      ],
+      "meaning_en": "Master, leader",
+      "meaning_am": "ጌታ፣ መሪ",
+      "themes": [
+        "strength"
+      ],
+      "pronunciation": "seh-YEED",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Arabic",
+      "origin_am": "ዓረብኛ",
+      "nicknames": [],
+      "similar": [
+        "ahmed",
+        "kedir"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 64,
+      "modern": false,
+      "rarity": "rare",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "selam",
+      "name_latin": "Selam",
+      "name_geez": "ሰላም",
+      "spellings": [
+        "Selam",
+        "Salam",
+        "Selaam"
+      ],
+      "gender": "girl",
+      "languages": [
+        "amharic",
+        "tigrinya"
+      ],
+      "faiths": [
+        "neutral"
+      ],
+      "meaning_en": "Peace",
+      "meaning_am": "ሰላም",
+      "themes": [
+        "peace"
+      ],
+      "pronunciation": "seh-LAHM",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Amharic / Tigrinya",
+      "origin_am": "አማርኛ / ትግርኛ",
+      "nicknames": [
+        "Seli",
+        "Sele"
+      ],
+      "similar": [
+        "hiwot",
+        "fikir"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 95,
+      "modern": true,
+      "rarity": "popular",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T15:42:05.000Z"
+    },
+    {
+      "id": "senait",
+      "name_latin": "Senait",
+      "name_geez": "ሰናይት",
+      "spellings": [
+        "Senait",
+        "Senayt",
+        "Sennait"
+      ],
+      "gender": "girl",
+      "languages": [
+        "tigrinya",
+        "amharic"
+      ],
+      "faiths": [
+        "neutral"
+      ],
+      "meaning_en": "Goodness, the good one",
+      "meaning_am": "መልካምነት",
+      "themes": [
+        "virtue"
+      ],
+      "pronunciation": "seh-nah-EET",
+      "audio_url": null,
+      "syllables": 3,
+      "easy_abroad": true,
+      "origin_en": "Tigrinya",
+      "origin_am": "ትግርኛ",
+      "nicknames": [
+        "Seni"
+      ],
+      "similar": [
+        "tirunesh",
+        "mehari"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 67,
+      "modern": true,
+      "rarity": "rare",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T15:42:05.000Z"
+    },
+    {
+      "id": "tamrat",
+      "name_latin": "Tamrat",
+      "name_geez": "ታምራት",
+      "spellings": [
+        "Tamrat",
+        "Temrat",
+        "Tamirat"
+      ],
+      "gender": "boy",
+      "languages": [
+        "amharic"
+      ],
+      "faiths": [
+        "orthodox",
+        "neutral"
+      ],
+      "meaning_en": "Miracles",
+      "meaning_am": "ተአምራት",
+      "themes": [
+        "faith",
+        "hope"
+      ],
+      "pronunciation": "tahm-RAHT",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Amharic (from Ge'ez)",
+      "origin_am": "አማርኛ (ከግዕዝ)",
+      "nicknames": [
+        "Tame"
+      ],
+      "similar": [
+        "tesfaye",
+        "haile"
+      ],
+      "famous": [
+        "Tamirat Tola"
+      ],
+      "verified": false,
+      "popularity": 57,
+      "modern": false,
+      "rarity": "rare",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "tesfaye",
+      "name_latin": "Tesfaye",
+      "name_geez": "ተስፋዬ",
+      "spellings": [
+        "Tesfaye",
+        "Tesfay",
+        "Tesfaie"
+      ],
+      "gender": "boy",
+      "languages": [
+        "amharic",
+        "tigrinya"
+      ],
+      "faiths": [
+        "neutral"
+      ],
+      "meaning_en": "My hope",
+      "meaning_am": "ተስፋዬ",
+      "themes": [
+        "hope"
+      ],
+      "pronunciation": "tes-FAH-yeh",
+      "audio_url": null,
+      "syllables": 3,
+      "easy_abroad": false,
+      "origin_en": "Amharic",
+      "origin_am": "አማርኛ",
+      "nicknames": [
+        "Tesfu",
+        "Tesfish"
+      ],
+      "similar": [
+        "haile",
+        "abebe"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 65,
+      "modern": false,
+      "rarity": "rare",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "tirunesh",
+      "name_latin": "Tirunesh",
+      "name_geez": "ጥሩነሽ",
+      "spellings": [
+        "Tirunesh",
+        "Terunesh"
+      ],
+      "gender": "girl",
+      "languages": [
+        "amharic"
+      ],
+      "faiths": [
+        "neutral"
+      ],
+      "meaning_en": "You are good",
+      "meaning_am": "ጥሩ ነሽ",
+      "themes": [
+        "virtue"
+      ],
+      "pronunciation": "tee-roo-NESH",
+      "audio_url": null,
+      "syllables": 3,
+      "easy_abroad": false,
+      "origin_en": "Amharic",
+      "origin_am": "አማርኛ",
+      "nicknames": [
+        "Tiru"
+      ],
+      "similar": [
+        "senait"
+      ],
+      "famous": [
+        "Tirunesh Dibaba"
+      ],
+      "verified": false,
+      "popularity": 60,
+      "modern": false,
+      "rarity": "rare",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "tsehay",
+      "name_latin": "Tsehay",
+      "name_geez": "ፀሐይ",
+      "spellings": [
+        "Tsehay",
+        "Tsehaye",
+        "Tsahay",
+        "Tsehai"
+      ],
+      "gender": "girl",
+      "languages": [
+        "amharic",
+        "tigrinya"
+      ],
+      "faiths": [
+        "neutral"
+      ],
+      "meaning_en": "Sun",
+      "meaning_am": "ፀሐይ",
+      "themes": [
+        "nature",
+        "light"
+      ],
+      "pronunciation": "tseh-HAI",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": false,
+      "origin_en": "Amharic",
+      "origin_am": "አማርኛ",
+      "nicknames": [
+        "Tsehu"
+      ],
+      "similar": [
+        "biftu",
+        "birhan"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 62,
+      "modern": false,
+      "rarity": "rare",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "tsion",
+      "name_latin": "Tsion",
+      "name_geez": "ጽዮን",
+      "spellings": [
+        "Tsion",
+        "Tsiyon",
+        "Seyon",
+        "Zion"
+      ],
+      "gender": "girl",
+      "languages": [
+        "amharic",
+        "tigrinya"
+      ],
+      "faiths": [
+        "orthodox",
+        "protestant",
+        "catholic"
+      ],
+      "meaning_en": "Zion",
+      "meaning_am": "ጽዮን — ቅድስት ከተማ",
+      "themes": [
+        "faith"
+      ],
+      "pronunciation": "tsee-YOHN",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": false,
+      "origin_en": "Ge'ez (from Hebrew)",
+      "origin_am": "ግዕዝ (ከዕብራይስጥ)",
+      "nicknames": [
+        "Tsi"
+      ],
+      "similar": [
+        "kidist",
+        "meron"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 85,
+      "modern": false,
+      "rarity": "unique",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "yared",
+      "name_latin": "Yared",
+      "name_geez": "ያሬድ",
+      "spellings": [
+        "Yared",
+        "Jared",
+        "Yaried"
+      ],
+      "gender": "boy",
+      "languages": [
+        "amharic",
+        "tigrinya"
+      ],
+      "faiths": [
+        "orthodox"
+      ],
+      "meaning_en": "Descent; honours Saint Yared, father of Ethiopian church music",
+      "meaning_am": "ትውልድ — ቅዱስ ያሬድን የሚያስታውስ",
+      "themes": [
+        "faith",
+        "history"
+      ],
+      "pronunciation": "yah-RED",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Ge'ez (from Hebrew)",
+      "origin_am": "ግዕዝ (ከዕብራይስጥ)",
+      "nicknames": [],
+      "similar": [
+        "dawit",
+        "amanuel"
+      ],
+      "famous": [
+        "Saint Yared"
+      ],
+      "verified": false,
+      "popularity": 73,
+      "modern": false,
+      "rarity": "unique",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    },
+    {
+      "id": "yonas",
+      "name_latin": "Yonas",
+      "name_geez": "ዮናስ",
+      "spellings": [
+        "Yonas",
+        "Yona",
+        "Jonas"
+      ],
+      "gender": "boy",
+      "languages": [
+        "amharic",
+        "tigrinya"
+      ],
+      "faiths": [
+        "orthodox",
+        "protestant",
+        "catholic"
+      ],
+      "meaning_en": "Dove (from Jonah)",
+      "meaning_am": "ርግብ",
+      "themes": [
+        "faith",
+        "nature"
+      ],
+      "pronunciation": "YOH-nahs",
+      "audio_url": null,
+      "syllables": 2,
+      "easy_abroad": true,
+      "origin_en": "Ge'ez (from Hebrew)",
+      "origin_am": "ግዕዝ (ከዕብራይስጥ)",
+      "nicknames": [
+        "Yoni"
+      ],
+      "similar": [
+        "dawit",
+        "eyob"
+      ],
+      "famous": [],
+      "verified": false,
+      "popularity": 80,
+      "modern": false,
+      "rarity": "unique",
+      "trend_score": 0,
+      "updated_at": "2026-11-25T04:13:26.000Z"
+    }
+  ]
+}

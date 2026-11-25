@@ -1,0 +1,36 @@
+id,name_latin,name_geez,spellings,gender,languages,faiths,meaning_en,meaning_am,themes,pronunciation,audio_url,syllables,easy_abroad,origin_en,origin_am,nicknames,similar,famous,verified,popularity,updated_at,modern
+abebe,Abebe,አበበ,Abebe|Abbebe,boy,amharic,neutral,"He blossomed, he flourished",አበበ፣ ፈካ,nature,ah-BEH-beh,,3,true,Amharic,አማርኛ,Abe,tesfaye,Abebe Bikila,false,75,,false
+ahmed,Ahmed,አሕመድ,Ahmed|Ahmad,boy,amharic|oromo|tigrinya,muslim,Most praised,እጅግ የተመሰገነ,faith,AH-med,,2,true,Arabic,ዓረብኛ,,seid|kedir,,false,84,,false
+amanuel,Amanuel,አማኑኤል,Amanuel|Emmanuel|Amanueal,boy,amharic|tigrinya,orthodox|protestant|catholic,God is with us,እግዚአብሔር ከእኛ ጋር ነው,faith,ah-mah-noo-EL,,4,true,Ge'ez (from Hebrew),ግዕዝ (ከዕብራይስጥ),Amanu|Ami,dawit|yonas,,false,88,,false
+amina,Amina,አሚና,Amina|Aminah|Ameena,girl,amharic|oromo|tigrinya,muslim,"Trustworthy, faithful",ታማኝ,virtue,ah-MEE-nah,,3,true,Arabic,ዓረብኛ,Ami,nuria|hayat,,false,80,,false
+betelhem,Betelhem,ቤተልሔም,Betelhem|Bethlehem|Betlehem,girl,amharic|tigrinya,orthodox|protestant|catholic,House of bread (Bethlehem),የእንጀራ ቤት,faith,beh-tel-HEM,,3,true,Ge'ez (from Hebrew),ግዕዝ (ከዕብራይስጥ),Beti|Betty,tsion|mekdes,,false,82,,false
+biftu,Biftu,ቢፍቱ,Biftu|Biftuu,girl,oromo,neutral,"Sunrise, sunlight",የፀሐይ ብርሃን,nature|light,BIF-too,,2,true,Oromo,ኦሮምኛ,,tsehay|chaltu,,false,56,,false
+birhan,Birhan,ብርሃን,Birhan|Berhan|Brhan|Birhane,unisex,amharic|tigrinya,neutral,Light,ብርሃን,light,bir-HAHN,,2,true,Amharic (from Ge'ez),አማርኛ (ከግዕዝ),Biri,nuria|tsehay,,false,66,,true
+chaltu,Chaltu,ጫልቱ,Chaltu|Caaltuu|Chaltuu,girl,oromo,neutral,She surpasses others,ከሁሉ የምትበልጥ,virtue,CHAHL-too,,2,false,Oromo,ኦሮምኛ,,biftu|gemechu,,false,54,,false
+dawit,Dawit,ዳዊት,Dawit|Dawitt|Dawet,boy,amharic|tigrinya,orthodox|protestant|catholic,Beloved (from David),የተወደደ,faith,dah-WEET,,2,true,Ge'ez (from Hebrew),ግዕዝ (ከዕብራይስጥ),Dawi,yonas|yared,,false,85,,false
+eyob,Eyob,ኢዮብ,Eyob|Iyob|Eyoab,boy,amharic|tigrinya,orthodox|protestant|catholic,"From Job, the patient one",ከኢዮብ — ትዕግሥተኛው,faith|virtue,ee-YOHB,,2,true,Ge'ez (from Hebrew),ግዕዝ (ከዕብራይስጥ),,yonas|nahom,,false,70,,false
+fikir,Fikir,ፍቅር,Fikir|Fiker|Fikr,unisex,amharic,neutral,Love,ፍቅር,love,fee-KIR,,2,true,Amharic,አማርኛ,Fiki,selam|birhan,,false,68,,true
+gemechu,Gemechu,ገመቹ,Gemechu|Gammachuu|Gemachu,boy,oromo,neutral,"Joy, happiness",ደስታ,joy,geh-MEH-choo,,3,false,Oromo,ኦሮምኛ,Gemu,biftu|chaltu,,false,58,,false
+haile,Haile,ኃይሌ,Haile|Hayle,boy,amharic|tigrinya,neutral,"My power, my strength",ኃይሌ — ብርታቴ,strength,HAI-leh,,2,true,Amharic (from Ge'ez),አማርኛ (ከግዕዝ),,tesfaye,Haile Gebrselassie,false,70,,false
+hana,Hana,ሐና,Hana|Hanna|Hannah|Hanah,girl,amharic|tigrinya,orthodox|protestant|catholic,"Grace, favour",ጸጋ,faith|virtue,HAH-nah,,2,true,Ge'ez (from Hebrew),ግዕዝ (ከዕብራይስጥ),,lidya|selam,,false,83,,false
+hayat,Hayat,ሀያት,Hayat|Hayet,girl,amharic|oromo|tigrinya,muslim,Life,ሕይወት,life,hah-YAHT,,2,true,Arabic,ዓረብኛ,,hiwot|amina,,false,76,,false
+hiwot,Hiwot,ሕይወት,Hiwot|Heywet|Hiywet|Hywet,girl,amharic|tigrinya,neutral,Life,ሕይወት፣ ኑሮ,life,HEE-wot,,2,true,Amharic (from Ge'ez),አማርኛ (ከግዕዝ),Hiwi,hayat|selam,,false,90,,true
+kedir,Kedir,ከድር,Kedir|Kadir|Khidir,boy,amharic|oromo,muslim,"Green, flourishing (after al-Khidr)",ለምለም፣ አረንጓዴ,faith|nature,KEH-dir,,2,true,Arabic,ዓረብኛ,,ahmed|seid,,false,60,,false
+kidist,Kidist,ቅድስት,Kidist|Qidist|Kedist,girl,amharic,orthodox,Holy one (feminine),ቅድስት — የተቀደሰች,faith,kee-DIST,,2,true,Amharic (from Ge'ez),አማርኛ (ከግዕዝ),Kiki|Kidu,mekdes|meron,,false,78,,false
+lidya,Lidya,ልድያ,Lidya|Lydia|Lidia,girl,amharic|tigrinya,orthodox|protestant|catholic,Woman of Lydia,ከልድያ የመጣች,faith,LEED-yah,,2,true,Greek (biblical),ግሪክ (መጽሐፍ ቅዱሳዊ),Lidu,hana|betelhem,,false,72,,true
+mehari,Mehari,መሐሪ,Mehari|Mehary|Meharie,boy,tigrinya|amharic,neutral,Merciful,መሐሪ — ርኅሩኅ,virtue|faith,meh-HAH-ree,,3,true,Tigrinya (from Ge'ez),ትግርኛ (ከግዕዝ),,senait|nahom,,false,58,,false
+mekdes,Mekdes,መቅደስ,Mekdes|Meqdes|Mekdas,girl,amharic,orthodox,"Sanctuary, holy place",መቅደስ — ቅዱስ ስፍራ,faith,mek-DES,,2,true,Amharic (from Ge'ez),አማርኛ (ከግዕዝ),Meki,kidist|tsion,,false,74,,false
+meron,Meron,ሜሮን,Meron|Miron,girl,amharic|tigrinya,orthodox,Holy anointing oil (chrism),ቅዱስ ቅባት,faith,meh-ROHN,,2,true,Ge'ez (from Greek),ግዕዝ (ከግሪክ),Miri,kidist|mekdes,,false,80,,false
+nahom,Nahom,ናሆም,Nahom|Nahum|Nahome,boy,amharic|tigrinya,orthodox|protestant|catholic,"Comfort, consolation",መጽናናት,faith|hope,nah-HOHM,,2,true,Ge'ez (from Hebrew),ግዕዝ (ከዕብራይስጥ),,yonas|amanuel,,false,76,,true
+netsanet,Netsanet,ነፃነት,Netsanet|Nesanet|Netsannet,unisex,amharic,neutral,Freedom,ነፃነት,hope|virtue,neh-tsah-NET,,3,false,Amharic,አማርኛ,Netsi,fikir|tesfaye,,false,55,,true
+nuria,Nuria,ኑሪያ,Nuria|Nuriya|Nouria,girl,amharic|oromo,muslim,Light,ብርሃን,light,NOOR-ee-yah,,3,true,Arabic,ዓረብኛ,,amina|birhan,,false,70,,false
+seid,Seid,ሰይድ,Seid|Sayid|Seyid|Said,boy,amharic|oromo,muslim,"Master, leader",ጌታ፣ መሪ,strength,seh-YEED,,2,true,Arabic,ዓረብኛ,,ahmed|kedir,,false,64,,false
+selam,Selam,ሰላም,Selam|Salam|Selaam,girl,amharic|tigrinya,neutral,Peace,ሰላም,peace,seh-LAHM,,2,true,Amharic / Tigrinya,አማርኛ / ትግርኛ,Seli|Sele,hiwot|fikir,,false,95,,true
+senait,Senait,ሰናይት,Senait|Senayt|Sennait,girl,tigrinya|amharic,neutral,"Goodness, the good one",መልካምነት,virtue,seh-nah-EET,,3,true,Tigrinya,ትግርኛ,Seni,tirunesh|mehari,,false,67,,true
+tamrat,Tamrat,ታምራት,Tamrat|Temrat|Tamirat,boy,amharic,orthodox|neutral,Miracles,ተአምራት,faith|hope,tahm-RAHT,,2,true,Amharic (from Ge'ez),አማርኛ (ከግዕዝ),Tame,tesfaye|haile,Tamirat Tola,false,57,,false
+tesfaye,Tesfaye,ተስፋዬ,Tesfaye|Tesfay|Tesfaie,boy,amharic|tigrinya,neutral,My hope,ተስፋዬ,hope,tes-FAH-yeh,,3,false,Amharic,አማርኛ,Tesfu|Tesfish,haile|abebe,,false,65,,false
+tirunesh,Tirunesh,ጥሩነሽ,Tirunesh|Terunesh,girl,amharic,neutral,You are good,ጥሩ ነሽ,virtue,tee-roo-NESH,,3,false,Amharic,አማርኛ,Tiru,senait,Tirunesh Dibaba,false,60,,false
+tsehay,Tsehay,ፀሐይ,Tsehay|Tsehaye|Tsahay|Tsehai,girl,amharic|tigrinya,neutral,Sun,ፀሐይ,nature|light,tseh-HAI,,2,false,Amharic,አማርኛ,Tsehu,biftu|birhan,,false,62,,false
+tsion,Tsion,ጽዮን,Tsion|Tsiyon|Seyon|Zion,girl,amharic|tigrinya,orthodox|protestant|catholic,Zion,ጽዮን — ቅድስት ከተማ,faith,tsee-YOHN,,2,false,Ge'ez (from Hebrew),ግዕዝ (ከዕብራይስጥ),Tsi,kidist|meron,,false,85,,false
+yared,Yared,ያሬድ,Yared|Jared|Yaried,boy,amharic|tigrinya,orthodox,"Descent; honours Saint Yared, father of Ethiopian church music",ትውልድ — ቅዱስ ያሬድን የሚያስታውስ,faith|history,yah-RED,,2,true,Ge'ez (from Hebrew),ግዕዝ (ከዕብራይስጥ),,dawit|amanuel,Saint Yared,false,73,,false
+yonas,Yonas,ዮናስ,Yonas|Yona|Jonas,boy,amharic|tigrinya,orthodox|protestant|catholic,Dove (from Jonah),ርግብ,faith|nature,YOH-nahs,,2,true,Ge'ez (from Hebrew),ግዕዝ (ከዕብራይስጥ),Yoni,dawit|eyob,,false,80,,false

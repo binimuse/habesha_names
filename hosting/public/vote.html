@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Family vote · Habesha Names</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Plus+Jakarta+Sans:wght@400;600;700&family=Noto+Serif+Ethiopic:wght@600&family=Noto+Sans+Ethiopic:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FBF7F2; --surface: #FFFFFF; --ink: #2B2420; --muted: #7A6E66;
+      --primary: #C8553D; --gold: #D4A24C; --green: #9DB89A; --outline: #EAE0D5;
+      --radius: 20px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #16110E; --surface: #211A16; --ink: #F5EEE6; --muted: #B3A69B;
+        --primary: #E0745C; --outline: #3A2F29;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font: 16px/1.5 "Plus Jakarta Sans", "Noto Sans Ethiopic", system-ui, sans-serif;
+    }
+    .tilet {
+      height: 22px;
+      background:
+        linear-gradient(var(--gold) 0 2px, transparent 2px calc(100% - 2px), var(--gold) calc(100% - 2px)),
+        repeating-linear-gradient(90deg, var(--primary) 0 10px, var(--gold) 10px 14px, var(--green) 14px 18px, var(--gold) 18px 22px);
+    }
+    main { max-width: 560px; margin: 0 auto; padding: 24px 16px 48px; }
+    h1 { font: 600 30px/1.2 Fraunces, "Noto Serif Ethiopic", serif; margin: 8px 0 4px; }
+    .muted { color: var(--muted); }
+    .card {
+      background: var(--surface); border-radius: var(--radius);
+      box-shadow: 0 8px 24px rgba(43,36,32,.06); padding: 16px 18px; margin: 12px 0;
+    }
+    label.option {
+      display: flex; gap: 14px; align-items: center; cursor: pointer;
+      border: 2px solid transparent; transition: border-color .2s, transform .2s;
+    }
+    label.option:has(input:checked) { border-color: var(--primary); transform: scale(1.01); }
+    label.option input { width: 22px; height: 22px; accent-color: var(--primary); flex: none; }
+    .latin { font: 600 24px/1.1 Fraunces, serif; }
+    .geez { font: 600 18px/1.3 "Noto Serif Ethiopic", serif; color: var(--muted); }
+    .meaning { font-size: 14px; color: var(--muted); }
+    input[type=text] {
+      width: 100%; padding: 14px 16px; border-radius: 16px; font: inherit;
+      border: 1px solid var(--outline); background: var(--surface); color: var(--ink);
+    }
+    button {
+      width: 100%; padding: 15px; border: 0; border-radius: 16px; cursor: pointer;
+      background: var(--primary); color: #fff; font: 700 16px "Plus Jakarta Sans", "Noto Sans Ethiopic", sans-serif;
+    }
+    button:disabled { opacity: .5; cursor: default; }
+    .center { text-align: center; }
+    .big { font-size: 48px; }
+    .error { color: #B3261E; }
+    .lang { float: right; font-size: 14px; color: var(--primary); cursor: pointer; background: none; border: 0; width: auto; padding: 0; }
+    footer { text-align: center; font-size: 13px; color: var(--muted); margin-top: 32px; }
+  </style>
+</head>
+<body>
+  <div class="tilet"></div>
+  <main>
+    <button class="lang" id="lang" type="button"></button>
+    <div id="app"><p class="muted" data-t="loading"></p></div>
+    <footer data-t="footer"></footer>
+  </main>
+  <div class="tilet"></div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
+    import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-auth.js";
+    import {
+      getFirestore, doc, getDoc, setDoc, serverTimestamp,
+    } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
+    import { firebaseConfig } from "/firebase-config.js";
+
+    const T = {
+      en: {
+        loading: "Loading…", footer: "Made with Habesha Names", switchTo: "አማርኛ",
+        yourName: "Your name", namePh: "e.g. Grandma Almaz", vote: "Vote",
+        thanks: "Thank you!", thanksMsg: "Your vote was counted.",
+        already: "You already voted on this device.",
+        closed: "Voting is closed.", notFound: "This vote doesn’t exist.",
+        pick: "Pick a name and enter your name.", failed: "Could not send your vote. Please try again.",
+        offline: "Couldn’t connect. Check your internet and reload.",
+      },
+      am: {
+        loading: "በመጫን ላይ…", footer: "በሐበሻ ስሞች የተሰራ", switchTo: "English",
+        yourName: "ስምዎ", namePh: "ለምሳሌ፦ አያቴ አልማዝ", vote: "ድምፅ ይስጡ",
+        thanks: "እናመሰግናለን!", thanksMsg: "ድምፅዎ ተቆጥሯል።",
+        already: "በዚህ መሣሪያ ቀድሞ ድምፅ ሰጥተዋል።",
+        closed: "ድምፅ መስጫው ተዘግቷል።", notFound: "ይህ የድምፅ መስጫ የለም።",
+        pick: "ስም ይምረጡና ስምዎን ያስገቡ።", failed: "ድምፅዎን መላክ አልተቻለም። እባክዎ እንደገና ይሞክሩ።",
+        offline: "መገናኘት አልተቻለም። ኢንተርኔትዎን አረጋግጠው ገጹን ያድሱ።",
+      },
+    };
+    let lang = (navigator.language || "en").toLowerCase().startsWith("am") ? "am" : "en";
+    const t = (k) => T[lang][k];
+    const app = document.getElementById("app");
+    const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+
+    const voteId = location.pathname.split("/v/")[1]?.split(/[/?#]/)[0]
+      || new URLSearchParams(location.search).get("id");
+    const doneKey = `habesha-vote-${voteId}`;
+    let state = { view: "loading" };
+
+    function render() {
+      document.documentElement.lang = lang;
+      document.getElementById("lang").textContent = t("switchTo");
+      document.querySelectorAll("[data-t]").forEach((el) => (el.textContent = t(el.dataset.t)));
+      const s = state;
+      if (s.view === "loading") app.innerHTML = `<p class="muted">${t("loading")}</p>`;
+      else if (s.view === "message") app.innerHTML = `<div class="card center"><p>${esc(t(s.key))}</p></div>`;
+      else if (s.view === "done") app.innerHTML = `
+        <div class="card center"><div class="big">🎉</div><h1>${t("thanks")}</h1>
+        <p class="muted">${t(s.already ? "already" : "thanksMsg")}</p></div>`;
+      else if (s.view === "form") {
+        const v = s.vote;
+        app.innerHTML = `
+          <h1>${esc(v.title)}</h1>
+          <form id="f">
+            ${v.options.map((o) => `
+              <label class="card option">
+                <input type="radio" name="choice" value="${esc(o.name_id)}" required>
+                <span><div class="latin">${esc(o.latin)}</div><div class="geez">${esc(o.geez)}</div>
+                <div class="meaning">${esc(o.meaning)}</div></span>
+              </label>`).join("")}
+            <p><label>${t("yourName")}<br>
+              <input type="text" name="voter" maxlength="40" required placeholder="${esc(t("namePh"))}"></label></p>
+            <p class="error" id="err"></p>
+            <button type="submit">${t("vote")}</button>
+          </form>`;
+        document.getElementById("f").addEventListener("submit", submit);
+      }
+    }
+
+    document.getElementById("lang").addEventListener("click", () => {
+      lang = lang === "am" ? "en" : "am";
+      render();
+    });
+
+    let db, uid;
+    async function start() {
+      render();
+      if (!voteId) { state = { view: "message", key: "notFound" }; return render(); }
+      try {
+        const fb = initializeApp(firebaseConfig);
+        db = getFirestore(fb);
+        uid = (await signInAnonymously(getAuth(fb))).user.uid;
+        const snap = await getDoc(doc(db, "votes", voteId));
+        if (!snap.exists()) { state = { view: "message", key: "notFound" }; return render(); }
+        const vote = snap.data();
+        // One ballot per device: the ballot id is this browser's anonymous uid.
+        const mine = await getDoc(doc(db, "votes", voteId, "ballots", uid)).catch(() => null);
+        if (mine?.exists() || localStorage.getItem(doneKey)) {
+          state = { view: "done", already: true };
+        } else if (!vote.open) {
+          state = { view: "message", key: "closed" };
+        } else {
+          state = { view: "form", vote };
+        }
+      } catch (e) {
+        console.error(e);
+        state = { view: "message", key: "offline" };
+      }
+      render();
+    }
+
+    async function submit(ev) {
+      ev.preventDefault();
+      const form = ev.target;
+      const choice = form.choice.value;
+      const voter = form.voter.value.trim();
+      const err = document.getElementById("err");
+      if (!choice || !voter) { err.textContent = t("pick"); return; }
+      form.querySelector("button").disabled = true;
+      try {
+        await setDoc(doc(db, "votes", voteId, "ballots", uid), {
+          voter_name: voter.slice(0, 40),
+          choice,
+          created_at: serverTimestamp(),
+        });
+        localStorage.setItem(doneKey, "1");
+        state = { view: "done", already: false };
+        render();
+      } catch (e) {
+        console.error(e);
+        // permission-denied after a successful earlier vote = already voted.
+        if (e?.code === "permission-denied") {
+          const again = await getDoc(doc(db, "votes", voteId, "ballots", uid)).catch(() => null);
+          if (again?.exists()) { state = { view: "done", already: true }; return render(); }
+        }
+        err.textContent = t("failed");
+        form.querySelector("button").disabled = false;
+      }
+    }
+
+    start();
+  </script>
+</body>
+</html>
