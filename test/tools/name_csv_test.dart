@@ -163,4 +163,28 @@ void main() {
       );
     });
   });
+
+  test('explicit rarity / trend_score columns (Firestore export) are kept', () {
+    const String h =
+        'id,name_latin,name_geez,gender,popularity,rarity,trend_score';
+    final CsvConversion r = convertRows(
+      parseCsv(
+        '$h\n'
+        'a,A,ሀ,girl,90,rare,7\n'
+        'b,B,ለ,boy,10,,\n'
+        'c,C,ሐ,boy,50,,\n',
+      ),
+      now: now,
+    );
+    expect(r.errors, isEmpty);
+    final Map<String, NameModel> by = {for (final n in r.names) n.id: n};
+    expect(by['a']!.rarity.name, 'rare'); // kept, despite top popularity
+    expect(by['a']!.trendScore, 7);
+    expect(by['b']!.trendScore, 0);
+    final CsvConversion bad = convertRows(
+      parseCsv('$h\nz,Z,ዘ,girl,5,legendary,0\n'),
+      now: now,
+    );
+    expect(bad.errors.single, contains('rarity "legendary"'));
+  });
 }

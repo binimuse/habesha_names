@@ -96,6 +96,7 @@ CsvConversion convertRows(
 
   final List<NameModel> names = [];
   final Set<String> ids = {};
+  final Map<String, Rarity> givenRarities = {};
 
   for (int r = 1; r < rows.length; r++) {
     final int line = r + 1;
@@ -147,6 +148,18 @@ CsvConversion convertRows(
 
     final int? syllables = integer(NameFields.syllables);
     final int? popularity = integer(NameFields.popularity);
+    // Optional server-owned columns (from a Firestore export). When present
+    // they are kept as-is instead of being recomputed from popularity.
+    final int? trendScore = integer(NameFields.trendScore);
+    final String rarityText = text(NameFields.rarity).toLowerCase();
+    final Rarity? givenRarity = Rarity.tryParse(rarityText);
+    if (rarityText.isNotEmpty && givenRarity == null) {
+      errors.add(
+        'Line $line ($id): rarity "$rarityText" is not popular/unique/rare',
+      );
+      continue;
+    }
+    if (givenRarity != null) givenRarities[id] = givenRarity;
     final bool? easyAbroad = boolean(NameFields.easyAbroad);
     final bool? verified = boolean(NameFields.verified);
     final bool? modern = boolean(NameFields.modern);
@@ -186,6 +199,8 @@ CsvConversion convertRows(
       verified: verified!,
       modern: modern!,
       popularity: popularity!,
+      trendScore: trendScore ?? 0,
+      rarity: givenRarity ?? Rarity.unique,
       updatedAt: updatedAt,
     );
 
@@ -207,15 +222,21 @@ CsvConversion convertRows(
   }
 
   names.sort((a, b) => a.id.compareTo(b.id));
-  return CsvConversion(_withRarity(names, previous), errors, warnings);
+  return CsvConversion(
+    _withRarity(names, previous, givenRarities),
+    errors,
+    warnings,
+  );
 }
 
 /// Initial rarity from curated popularity (the server later re-ranks by
-/// recent likes). Rarity depends on every row, so the "unchanged row keeps its
+/// recent likes). Rows with an explicit `rarity` column (a Firestore export)
+/// keep it, so the bundle matches the server exactly. Rarity depends on every row, so the "unchanged row keeps its
 /// previous updated_at" check is redone here with the final values.
 List<NameModel> _withRarity(
   List<NameModel> names,
   Map<String, NameModel> previous,
+  Map<String, Rarity> given,
 ) {
   final Map<String, NameModel> byId = {for (final n in names) n.id: n};
   final Map<String, Rarity> rarity = RarityRanker.rank(
@@ -227,7 +248,7 @@ List<NameModel> _withRarity(
     for (final NameModel n in names)
       () {
         final NameModel ranked = NameModel.fromJson(
-          n.toJson()..[NameFields.rarity] = rarity[n.id]!.name,
+          n.toJson()..[NameFields.rarity] = (given[n.id] ?? rarity[n.id]!).name,
         );
         final NameModel? before = previous[n.id];
         if (before == null || !_sameContent(before, ranked)) return ranked;
