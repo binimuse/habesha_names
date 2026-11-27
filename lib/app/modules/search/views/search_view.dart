@@ -56,6 +56,7 @@ class _Results extends GetView<NameSearchController> {
 
   @override
   Widget build(BuildContext context) {
+    final int every = nativeAdEvery();
     return ListView.separated(
       padding: const EdgeInsets.fromLTRB(
         AppSpacing.page,
@@ -63,7 +64,7 @@ class _Results extends GetView<NameSearchController> {
         AppSpacing.page,
         AppSpacing.xxxl,
       ),
-      itemCount: AdInterleave.itemCount(names.length) + 1,
+      itemCount: AdInterleave.itemCount(names.length, every: every) + 1,
       separatorBuilder: (_, _) => const SizedBox(height: AppSpacing.md),
       itemBuilder: (context, i) {
         if (i == 0) {
@@ -76,9 +77,9 @@ class _Results extends GetView<NameSearchController> {
             ).textTheme.labelLarge!.copyWith(color: context.palette.inkMuted),
           );
         }
-        // A native ad after every 12 results (hidden for Premium).
-        if (AdInterleave.isAd(i - 1)) return const NativeAdSlot();
-        final NameModel n = names[AdInterleave.itemIndex(i - 1)];
+        // A native ad after every 12 results (none when ads are off / Premium).
+        if (AdInterleave.isAd(i - 1, every: every)) return const NativeAdSlot();
+        final NameModel n = names[AdInterleave.itemIndex(i - 1, every: every)];
         final String tag = nameHeroTag('search', n.id);
         return NameCard(
               name: n,

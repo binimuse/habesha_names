@@ -7,6 +7,15 @@ import '../support/memory_storage.dart';
 
 Future<void> settle() => Future<void>.delayed(const Duration(milliseconds: 5));
 
+/// Like Firestore right after a transaction: no snapshot until the server
+/// answers (the cache-only "missing" snapshot is filtered out upstream).
+class SlowSnapshotRemote extends FakeRemote {
+  SlowSnapshotRemote(super.server, super.uid);
+
+  @override
+  Stream<Couple?> watchCouple(String code) => server.coupleCtl(code).stream;
+}
+
 void main() {
   late FakeServer server;
   late PartnerService alice;
@@ -28,6 +37,22 @@ void main() {
     expect(CoupleCode.normalize(' 123-456 '), '123456');
     expect(CoupleCode.isValid('12345'), isFalse);
     expect(CoupleCode.isValid('12a456'), isFalse);
+  });
+
+  test('created code shows at once, before the first snapshot', () async {
+    final PartnerService s = await PartnerService(
+      SlowSnapshotRemote(server, 'alice'),
+      MemoryStorageService(),
+    ).init();
+    final String code = await s.create();
+    await settle();
+    expect(s.code, code);
+    expect(s.couple.value?.members, ['alice']);
+    expect(s.isLinked, isFalse);
+
+    server.pushCouple(code); // server confirms: still linked to the code
+    await settle();
+    expect(s.code, code);
   });
 
   test('create → waiting; partner joins → linked on both sides', () async {

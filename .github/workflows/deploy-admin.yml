@@ -1,0 +1,99 @@
+# Builds the admin panel and uploads it to cPanel
+# (public_html/habeshanames.binimuse.com) on every push to main
+# that changes something in admin/.
+name: Deploy admin to cPanel
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "admin/**"
+      - ".github/workflows/deploy-admin.yml"
+  workflow_dispatch: # also allows a manual "Run workflow" button
+
+concurrency:
+  group: deploy-admin
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: admin
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # The admin app is detected automatically: Flutter (pubspec.yaml)
+      # or a Node web app (package.json).
+      - name: Detect app type
+        id: kind
+        run: |
+          if [ -f pubspec.yaml ]; then echo "type=flutter" >> "$GITHUB_OUTPUT";
+          elif [ -f package.json ]; then echo "type=node" >> "$GITHUB_OUTPUT";
+          else echo "No pubspec.yaml or package.json in admin/" && exit 1; fi
+
+      # ---------- Flutter web ----------
+      - uses: subosito/flutter-action@v2
+        if: steps.kind.outputs.type == 'flutter'
+        with:
+          channel: stable
+          cache: true
+
+      - name: Build Flutter web
+        if: steps.kind.outputs.type == 'flutter'
+        run: |
+          flutter pub get
+          flutter build web --release --base-href /
+          echo "OUT=admin/build/web" >> "$GITHUB_ENV"
+
+      # ---------- Node (React / Vite / etc.) ----------
+      - uses: actions/setup-node@v4
+        if: steps.kind.outputs.type == 'node'
+        with:
+          node-version: 20
+
+      - name: Build Node web app
+        if: steps.kind.outputs.type == 'node'
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else npm install; fi
+          npm run build
+          if [ -d dist ]; then echo "OUT=admin/dist" >> "$GITHUB_ENV"; else echo "OUT=admin/build" >> "$GITHUB_ENV"; fi
+
+      # Single-page-app routing + no stale cache after each deploy
+      - name: Add .htaccess
+        working-directory: .
+        run: |
+          if [ ! -f "$OUT/.htaccess" ]; then cat > "$OUT/.htaccess" <<'HT'
+          <IfModule mod_rewrite.c>
+          RewriteEngine On
+          RewriteCond %{REQUEST_FILENAME} !-f
+          RewriteCond %{REQUEST_FILENAME} !-d
+          RewriteRule ^ index.html [L]
+          </IfModule>
+          <IfModule mod_headers.c>
+            <FilesMatch "^(index\.html|flutter_service_worker\.js|flutter_bootstrap\.js|version\.json)$">
+              Header set Cache-Control "no-cache, no-store, must-revalidate"
+            </FilesMatch>
+          </IfModule>
+          HT
+          fi
+          ls -la "$OUT"
+
+      - name: Upload to cPanel over FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./${{ env.OUT }}/
+          server-dir: ./
+          # cPanel sometimes keeps .well-known (SSL) and cgi-bin in the folder: leave them alone
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .well-known/**
+            cgi-bin/**

@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
-import { decideMatch, Like } from "./match";
+import { decideMatch, Like, matchPushText, matchRecipients } from "./match";
 
 const members = ["alice", "bob"];
 const like = (uid: string, name_id = "hiwot", superLike = false): Like => ({
@@ -47,4 +47,22 @@ test("likes from someone who left the couple are ignored", () => {
 
 test("duplicate likes from one person are not a match", () => {
   assert.equal(decideMatch(members, [like("alice"), like("alice")], "hiwot"), null);
+});
+
+test("only the partner who liked first is notified", () => {
+  const d = decideMatch(members, [like("bob"), like("alice")], "hiwot")!;
+  assert.deepEqual(matchRecipients(d, "alice"), ["bob"]);
+  assert.deepEqual(matchRecipients(d, "bob"), ["alice"]);
+});
+
+test("match push text follows the recipient's language", () => {
+  assert.deepEqual(matchPushText("en", "Hiwot", "ሕይወት", false), {
+    title: "It's a match! 💞",
+    body: "You both liked Hiwot · ሕይወት.",
+  });
+  assert.equal(matchPushText(undefined, "Hiwot", "", true).title, "It's a super match! 🌟");
+  assert.deepEqual(matchPushText("am", "Hiwot", "ሕይወት", false), {
+    title: "ተዛመዳችሁ! 💞",
+    body: "ሁለታችሁም ሕይወትን ወደዳችሁት።",
+  });
 });

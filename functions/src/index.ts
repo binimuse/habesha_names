@@ -5,7 +5,7 @@ import { logger } from "firebase-functions";
 import { onDocumentCreated } from "firebase-functions/v2/firestore";
 import { onSchedule } from "firebase-functions/v2/scheduler";
 
-import { decideMatch, Like } from "./match";
+import { decideMatch, Like, MatchDecision, matchPushText, matchRecipients } from "./match";
 import {
   addisDate,
   computeTrendUpdates,
@@ -22,7 +22,8 @@ initializeApp();
  * liked it too. If so, write couples/{code}/matches/{nameId}.
  *
  * Idempotent: the match doc id is the name id and is written with
- * `create()`, so two near-simultaneous likes produce one match.
+ * `create()`, so two near-simultaneous likes produce one match (and one
+ * push: only the call that created the match notifies the partner).
  */
 export const onSwipe = onDocumentCreated(
   { document: "couples/{code}/likes/{likeId}", region: "europe-west1" },
@@ -56,9 +57,56 @@ export const onSwipe = onDocumentCreated(
     } catch (error: unknown) {
       // 6 = ALREADY_EXISTS: the other partner's like got there first.
       if ((error as { code?: number }).code !== 6) throw error;
+      return;
+    }
+
+    // A failed push must not fail (and retry) the match write.
+    try {
+      await notifyMatch(decision, like.uid);
+    } catch (error: unknown) {
+      logger.warn("Match push failed", { code, name: like.name_id, error });
     }
   },
 );
+
+/** FCM errors meaning this FID will never work again. */
+const DEAD_TARGET = new Set([
+  "messaging/registration-token-not-registered",
+  "messaging/invalid-registration-token",
+  "messaging/installation-id-not-registered",
+]);
+
+/**
+ * Pushes "It's a match!" to the partner(s), in each device's language,
+ * via users/{uid}/devices/{fid}. Dead devices are deleted.
+ */
+async function notifyMatch(decision: MatchDecision, likerUid: string): Promise<void> {
+  const db = getFirestore();
+  const name = await db.doc(`names/${decision.name_id}`).get();
+  const latin = String(name.get("name_latin") ?? decision.name_id);
+  const geez = String(name.get("name_geez") ?? "");
+
+  for (const uid of matchRecipients(decision, likerUid)) {
+    const devices = await db.collection(`users/${uid}/devices`).get();
+    if (devices.empty) continue;
+    const res = await getMessaging().sendEach(
+      devices.docs.map((d) => ({
+        fid: d.id,
+        notification: matchPushText(d.get("language"), latin, geez, decision.super),
+        data: { type: "match", name_id: decision.name_id },
+        android: { priority: "high" as const },
+      })),
+    );
+    await Promise.all(
+      res.responses.map((r, i) =>
+        !r.success && DEAD_TARGET.has(r.error?.code ?? "")
+          ? devices.docs[i].ref.delete()
+          : null,
+      ),
+    );
+    logger.info("Match push", { uid, sent: res.successCount, failed: res.failureCount });
+  }
+}
 
 // ---------------------------------------------------------------------------
 // Scheduled jobs
@@ -166,3 +214,6 @@ export const nameOfTheDay = onSchedule(
     logger.info("Name of the day sent", { date, name: pick.id });
   },
 );
+
+// Admin web app (admin/) — callable functions, admin claim required.
+export { adminListUsers, adminSetUser } from "./admin";

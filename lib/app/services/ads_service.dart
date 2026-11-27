@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
+import '../core/constants/app_constants.dart';
 import '../routes/app_pages.dart';
 import 'purchase_service.dart';
 
@@ -72,7 +73,11 @@ abstract final class AdInterleave {
 /// Disabled for Premium users and on unsupported platforms / tests.
 class AdsService extends GetxService {
   AdsService(this._purchases, {bool? enabled, InterstitialPolicy? policy})
-    : _enabled = enabled ?? (!kIsWeb && (Platform.isAndroid || Platform.isIOS)),
+    : _enabled =
+          enabled ??
+          (AppConfig.adsEnabled &&
+              !kIsWeb &&
+              (Platform.isAndroid || Platform.isIOS)),
       policy = policy ?? InterstitialPolicy();
 
   /// Routes where an interstitial must never appear.

@@ -33,6 +33,15 @@ class FavoritesView extends GetView<FavoritesController> {
                 onPressed: () => Get.toNamed<void>(Routes.votes),
                 icon: const Icon(Icons.how_to_vote_outlined),
               ),
+              Obx(
+                () => controller.hasFavorites
+                    ? IconButton(
+                        tooltip: LocaleKeys.favoritesClearAll.tr,
+                        onPressed: controller.clearAll,
+                        icon: const Icon(Icons.delete_sweep_outlined),
+                      )
+                    : const SizedBox.shrink(),
+              ),
             ],
           ),
           Expanded(

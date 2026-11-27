@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../data/providers/ai_waitlist_remote.dart';
+import '../data/providers/device_token_remote.dart';
 import '../data/providers/firestore_favorites_remote_source.dart';
 import '../data/providers/firestore_names_remote_source.dart';
 import '../data/providers/firestore_partner_remote_source.dart';
@@ -33,6 +34,7 @@ import '../services/preferences_service.dart';
 import '../services/purchase_service.dart';
 import '../services/settings_service.dart';
 import '../services/storage_service.dart';
+import '../services/report_service.dart';
 import '../services/suggestion_service.dart';
 import '../services/vote_service.dart';
 import 'constants/app_constants.dart';
@@ -120,9 +122,19 @@ Future<void> bootstrap() async {
     SuggestionService(FirestoreSuggestionRemote(auth)),
     permanent: true,
   );
+  Get.put<ReportService>(
+    ReportService(FirestoreReportRemote(auth)),
+    permanent: true,
+  );
   Get.put<VoteService>(VoteService(FirestoreVoteRemote(auth)), permanent: true);
   await Get.putAsync<NotificationsService>(
-    () => NotificationsService(firebase, storage).init(),
+    () => NotificationsService(
+      firebase,
+      storage,
+      auth: auth,
+      devices: FirestoreDeviceTokenRemote(),
+      locale: Get.find<SettingsService>().locale,
+    ).init(),
     permanent: true,
   );
 

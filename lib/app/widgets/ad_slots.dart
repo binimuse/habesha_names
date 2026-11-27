@@ -10,6 +10,10 @@ import '../translations/locale_keys.dart';
 bool _adsOn() =>
     Get.isRegistered<AdsService>() && Get.find<AdsService>().showAds;
 
+/// Native-ad spacing for long lists: every 12 items, or 0 (no ad slots at
+/// all) when ads are off or the user has Premium.
+int nativeAdEvery() => _adsOn() ? 12 : 0;
+
 /// Adaptive banner (Name detail). Collapses when ads are off or not loaded.
 class BannerAdSlot extends StatefulWidget {
   const BannerAdSlot({super.key});

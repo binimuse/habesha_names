@@ -87,6 +87,50 @@ class FavoritesController extends AsyncListController<FavoriteEntry> {
   Future<void> saveNote(String nameId, String note) =>
       _favorites.setNote(nameId, note);
 
+  bool get hasFavorites => _favorites.items.isNotEmpty;
+
+  /// Asks first, clears everything, then offers Undo (notes come back too).
+  Future<void> clearAll() async {
+    final int count = _favorites.items.length;
+    if (count == 0) return;
+    final BuildContext? ctx = Get.context;
+    final ScaffoldMessengerState? messenger = ctx == null
+        ? null
+        : ScaffoldMessenger.maybeOf(ctx);
+    final bool? ok = await Get.dialog<bool>(
+      AlertDialog(
+        title: Text(LocaleKeys.favoritesClearTitle.tr),
+        content: Text(
+          LocaleKeys.favoritesClearMessage.trParams({'count': '$count'}),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Get.back(result: false),
+            child: Text(LocaleKeys.favoritesCancel.tr),
+          ),
+          FilledButton(
+            onPressed: () => Get.back(result: true),
+            child: Text(LocaleKeys.favoritesClearConfirm.tr),
+          ),
+        ],
+      ),
+    );
+    if (ok != true) return;
+    cancelCompare();
+    final List<Favorite> removed = await _favorites.clearAll();
+    messenger
+      ?..hideCurrentSnackBar()
+      ..showSnackBar(
+        SnackBar(
+          content: Text(LocaleKeys.favoritesCleared.tr),
+          action: SnackBarAction(
+            label: LocaleKeys.favoritesUndo.tr,
+            onPressed: () => _favorites.restoreAll(removed),
+          ),
+        ),
+      );
+  }
+
   /// Removes with an Undo snackbar.
   Future<void> remove(String nameId) async {
     final BuildContext? ctx = Get.context;

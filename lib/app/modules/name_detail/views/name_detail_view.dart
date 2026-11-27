@@ -15,6 +15,7 @@ import '../../../widgets/state/loading_view.dart';
 import '../controllers/name_detail_controller.dart';
 import '../widgets/detail_header.dart';
 import '../widgets/detail_sections.dart';
+import '../widgets/report_sheet.dart';
 
 class NameDetailView extends GetView<NameDetailController> {
   const NameDetailView({super.key, required this.args});
@@ -97,6 +98,17 @@ class _Body extends StatelessWidget {
             onTap: c.openSimilar,
           ).animate().fadeIn(duration: AppDurations.slow),
         ],
+        // Wrong meaning / spelling? Goes to the admin app's Reports tab.
+        Padding(
+          padding: const EdgeInsets.only(top: AppSpacing.lg),
+          child: Center(
+            child: TextButton.icon(
+              onPressed: () => ReportSheet.show(context, data.name),
+              icon: const Icon(Icons.flag_outlined),
+              label: Text(LocaleKeys.reportAction.tr),
+            ),
+          ),
+        ),
         SizedBox(
           height: AppSpacing.xxxl + MediaQuery.paddingOf(context).bottom,
         ),

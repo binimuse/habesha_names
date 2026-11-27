@@ -30,11 +30,6 @@ class AppBottomNav extends StatelessWidget {
             label: LocaleKeys.navDiscover.tr,
           ),
           NavigationDestination(
-            icon: const Icon(Icons.play_circle_outline_rounded),
-            selectedIcon: const Icon(Icons.play_circle_rounded),
-            label: LocaleKeys.navReels.tr,
-          ),
-          NavigationDestination(
             icon: const Icon(Icons.search_rounded),
             selectedIcon: const Icon(Icons.saved_search_rounded),
             label: LocaleKeys.navSearch.tr,
@@ -48,6 +43,11 @@ class AppBottomNav extends StatelessWidget {
             icon: const Icon(Icons.favorite_border_rounded),
             selectedIcon: const Icon(Icons.favorite_rounded),
             label: LocaleKeys.navFavorites.tr,
+          ),
+          NavigationDestination(
+            icon: const Icon(Icons.auto_fix_high_outlined),
+            selectedIcon: const Icon(Icons.auto_fix_high),
+            label: LocaleKeys.navStudio.tr,
           ),
         ],
       ),

@@ -68,9 +68,13 @@ class FirestorePartnerRemoteSource implements PartnerRemoteSource {
   });
 
   @override
-  Stream<Couple?> watchCouple(String code) => _couple(
-    code,
-  ).snapshots().map((s) => s.exists ? Couple.fromJson(code, s.data()!) : null);
+  Stream<Couple?> watchCouple(String code) => _couple(code)
+      .snapshots()
+      // Right after a create/join transaction the first snapshot comes from
+      // the local cache, which doesn't have the doc yet. Only the server may
+      // say "deleted" — otherwise the app would disconnect immediately.
+      .where((s) => s.exists || !s.metadata.isFromCache)
+      .map((s) => s.exists ? Couple.fromJson(code, s.data()!) : null);
 
   @override
   Stream<List<NameMatch>> watchMatches(String code) => _couple(code)

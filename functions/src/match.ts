@@ -37,3 +37,36 @@ export function decideMatch(
     super: forName.some((l) => l.super === true),
   };
 }
+
+/**
+ * Who gets the "It's a match!" push: every partner except the one whose
+ * like completed the match (they already see the match screen in the app).
+ */
+export function matchRecipients(decision: MatchDecision, likerUid: string): string[] {
+  return decision.uids.filter((uid) => uid !== likerUid);
+}
+
+export interface PushText {
+  title: string;
+  body: string;
+}
+
+/** Match notification text in the recipient's UI language. */
+export function matchPushText(
+  language: string | undefined,
+  latin: string,
+  geez: string,
+  superLike: boolean,
+): PushText {
+  if (language === "am") {
+    return {
+      title: superLike ? "ተዛመዳችሁ! 🌟" : "ተዛመዳችሁ! 💞",
+      body: `ሁለታችሁም ${geez || latin}ን ወደዳችሁት።`,
+    };
+  }
+  const name = geez ? `${latin} · ${geez}` : latin;
+  return {
+    title: superLike ? "It's a super match! 🌟" : "It's a match! 💞",
+    body: `You both liked ${name}.`,
+  };
+}

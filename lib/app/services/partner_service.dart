@@ -23,7 +23,9 @@ class PartnerService extends GetxService {
   final RxBool busy = false.obs;
 
   String? _uid;
-  String? _code;
+
+  /// Reactive so screens update the moment a code is created or joined.
+  final RxnString _code = RxnString();
   final Set<String> _announced = {};
   StreamSubscription<Couple?>? _coupleSub;
   StreamSubscription<List<NameMatch>>? _matchSub;
@@ -34,8 +36,8 @@ class PartnerService extends GetxService {
   Stream<NameMatch> get newMatches => _newMatches.stream;
 
   bool get isAvailable => _remote.isAvailable;
-  String? get code => _code;
-  bool get hasCode => _code != null;
+  String? get code => _code.value;
+  bool get hasCode => _code.value != null;
   bool get isLinked => couple.value?.isComplete ?? false;
   int get unseenCount =>
       matches.where((m) => !seenMatchIds.contains(m.nameId)).length;
@@ -55,6 +57,8 @@ class PartnerService extends GetxService {
   Future<String> create() => _guard(() async {
     final String uid = await _requireUid();
     final String code = await _remote.createCouple(uid);
+    // Show the code right away; the live snapshot takes over from here.
+    couple.value = Couple(code: code, members: [uid]);
     await _connect(code);
     return code;
   });
@@ -70,7 +74,7 @@ class PartnerService extends GetxService {
   });
 
   Future<void> leave() => _guard(() async {
-    final String? code = _code;
+    final String? code = _code.value;
     final String? uid = _uid;
     if (code != null && uid != null) await _remote.leaveCouple(code, uid);
     await _disconnect();
@@ -78,7 +82,7 @@ class PartnerService extends GetxService {
 
   /// Shares a like with the partner. Silently ignored when not linked.
   Future<void> recordLike(String nameId, {bool superLike = false}) async {
-    final (String? code, String? uid) = (_code, _uid);
+    final (String? code, String? uid) = (_code.value, _uid);
     if (code == null || uid == null) return;
     try {
       await _remote.setLike(code, uid, nameId, superLike: superLike);
@@ -88,7 +92,7 @@ class PartnerService extends GetxService {
   }
 
   Future<void> removeLike(String nameId) async {
-    final (String? code, String? uid) = (_code, _uid);
+    final (String? code, String? uid) = (_code.value, _uid);
     if (code == null || uid == null) return;
     try {
       await _remote.deleteLike(code, uid, nameId);
@@ -131,16 +135,26 @@ class PartnerService extends GetxService {
     if (uid == null) return;
     _uid = uid;
     await _cancelSubs();
-    _code = code;
+    _code.value = code;
     await _storage.write(_kCode, code);
-    _coupleSub = _remote.watchCouple(code).listen((c) {
-      if (c == null || !c.members.contains(uid)) {
-        unawaited(_disconnect()); // removed, or the couple was deleted
-      } else {
-        couple.value = c;
-      }
-    });
-    _matchSub = _remote.watchMatches(code).listen(_onMatches);
+    _coupleSub = _remote.watchCouple(code).listen(
+      (c) {
+        if (c == null || !c.members.contains(uid)) {
+          unawaited(_disconnect()); // removed, or the couple was deleted
+        } else {
+          couple.value = c;
+        }
+      },
+      // Offline / permission hiccups: keep the link, the listener
+      // recovers by itself.
+      onError: (Object e) => debugPrint('Partner couple stream: $e'),
+    );
+    _matchSub = _remote
+        .watchMatches(code)
+        .listen(
+          _onMatches,
+          onError: (Object e) => debugPrint('Partner matches stream: $e'),
+        );
   }
 
   void _onMatches(List<NameMatch> list) {
@@ -154,7 +168,7 @@ class PartnerService extends GetxService {
 
   Future<void> _disconnect() async {
     await _cancelSubs();
-    _code = null;
+    _code.value = null;
     couple.value = null;
     matches.clear();
     await _storage.remove(_kCode);

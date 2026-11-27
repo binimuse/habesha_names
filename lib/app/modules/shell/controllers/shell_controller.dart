@@ -11,10 +11,9 @@ import '../../../routes/app_pages.dart';
 import '../../../services/analytics_service.dart';
 import '../../../services/notifications_service.dart';
 import '../../../services/partner_service.dart';
-import '../../reels/controllers/reels_controller.dart';
 import '../../search/controllers/search_controller.dart';
 
-enum ShellTab { discover, reels, search, swipe, favorites }
+enum ShellTab { discover, search, swipe, favorites, studio }
 
 class ShellController extends GetxController {
   ShellController(this._partner);
@@ -53,12 +52,7 @@ class ShellController extends GetxController {
 
   void selectIndex(int index) => _select(ShellTab.values[index]);
 
-  void _select(ShellTab tab) {
-    currentTab.value = tab;
-    if (Get.isRegistered<ReelsController>()) {
-      Get.find<ReelsController>().setActive(tab == ShellTab.reels);
-    }
-  }
+  void _select(ShellTab tab) => currentTab.value = tab;
 
   /// Android back: return to Discover before leaving the app.
   void onBackFromOtherTab() => _select(ShellTab.discover);

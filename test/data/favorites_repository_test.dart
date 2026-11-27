@@ -3,6 +3,7 @@ import 'package:habesha_names/app/data/models/favorite.dart';
 import 'package:habesha_names/app/data/models/sync_result.dart';
 import 'package:habesha_names/app/data/providers/favorites_sources.dart';
 import 'package:habesha_names/app/data/repositories/favorites_repository.dart';
+import 'package:habesha_names/app/services/favorites_service.dart';
 
 class _Local implements FavoritesLocalSource {
   final Map<String, StoredFavorite> rows = {};
@@ -229,5 +230,23 @@ void main() {
       await repo.sync();
       expect(remote.pulledSince, [null, now]);
     });
+  });
+
+  test('clear all removes every favorite; undo brings notes back', () async {
+    final FavoritesService s = await FavoritesService(repo).init();
+    await s.add('hiwot');
+    await s.add('selam');
+    await s.setNote('selam', 'Grandma');
+    tick();
+    final List<Favorite> removed = await s.clearAll();
+    expect(removed.map((f) => f.nameId).toSet(), {'hiwot', 'selam'});
+    expect(s.items, isEmpty);
+    expect(s.isFavorite('hiwot'), isFalse);
+    expect(local.rows['selam']!.favorite.deleted, isTrue); // tombstone syncs
+    tick();
+    await s.restoreAll(removed);
+    expect(s.ids, {'hiwot', 'selam'});
+    expect(s.byId('selam')!.note, 'Grandma');
+    s.onClose();
   });
 }

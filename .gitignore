@@ -46,3 +46,9 @@ app.*.map.json
 
 # Firebase Admin service-account key (never commit)
 functions/service-account.json
+
+# Firebase CLI deploy cache (local only)
+.firebase/
+
+# One-off name backups (keep local)
+data/backup-names-*.json

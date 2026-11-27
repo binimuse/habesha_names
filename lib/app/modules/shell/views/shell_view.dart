@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 
 import '../../discover/views/discover_view.dart';
 import '../../favorites/views/favorites_view.dart';
-import '../../reels/views/reels_view.dart';
 import '../../search/views/search_view.dart';
+import '../../studio/views/studio_view.dart';
 import '../../swipe/views/swipe_view.dart';
 import '../controllers/shell_controller.dart';
 import '../widgets/app_bottom_nav.dart';
@@ -26,10 +26,10 @@ class ShellView extends GetView<ShellController> {
             index: index,
             children: const [
               DiscoverView(),
-              ReelsView(),
               SearchView(),
               SwipeView(),
               FavoritesView(),
+              StudioView(),
             ],
           ),
           bottomNavigationBar: AppBottomNav(

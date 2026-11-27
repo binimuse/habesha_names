@@ -24,6 +24,10 @@ abstract final class AppAssets {
 abstract final class AppConfig {
   /// Public family-vote page on Firebase Hosting (see hosting/public).
   static const String voteBaseUrl = 'https://habesha-baby-names.web.app/v/';
+
+  /// Master switch for AdMob. Off for now: no SDK init, no banner, native
+  /// or interstitial ads. Turn on once real ad unit ids are in [AdUnits].
+  static const bool adsEnabled = false;
 }
 
 abstract final class AppLinks {

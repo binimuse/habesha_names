@@ -59,6 +59,23 @@ class FavoritesService extends GetxService {
     _changed();
   }
 
+  /// Removes every favorite; returns them (with notes) for undo.
+  Future<List<Favorite>> clearAll() async {
+    final List<Favorite> removed = items.toList();
+    for (final Favorite f in removed) {
+      await _repo.remove(f.nameId);
+    }
+    _changed();
+    return removed;
+  }
+
+  Future<void> restoreAll(List<Favorite> favorites) async {
+    for (final Favorite f in favorites) {
+      await _repo.restore(f);
+    }
+    _changed();
+  }
+
   Future<void> setNote(String nameId, String note) async {
     await _repo.setNote(nameId, note);
     _changed();

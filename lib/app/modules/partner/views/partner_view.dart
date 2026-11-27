@@ -181,27 +181,31 @@ class _CodeDisplay extends GetView<PartnerController> {
   @override
   Widget build(BuildContext context) {
     final String code = controller.code;
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        for (int i = 0; i < code.length; i++) ...[
-          if (i == 3) const SizedBox(width: AppSpacing.md),
-          Container(
-            width: 40,
-            height: 52,
-            margin: const EdgeInsets.symmetric(horizontal: 3),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: context.palette.surfaceMuted,
-              borderRadius: BorderRadius.circular(AppRadius.sm),
+    // Scales down on narrow (5-inch) screens instead of overflowing.
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          for (int i = 0; i < code.length; i++) ...[
+            if (i == 3) const SizedBox(width: AppSpacing.md),
+            Container(
+              width: 40,
+              height: 52,
+              margin: const EdgeInsets.symmetric(horizontal: 3),
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: context.palette.surfaceMuted,
+                borderRadius: BorderRadius.circular(AppRadius.sm),
+              ),
+              child: Text(
+                code[i],
+                style: context.appText.nameDisplay.copyWith(fontSize: 28),
+              ),
             ),
-            child: Text(
-              code[i],
-              style: context.appText.nameDisplay.copyWith(fontSize: 28),
-            ),
-          ),
+          ],
         ],
-      ],
+      ),
     );
   }
 }
