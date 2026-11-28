@@ -62,7 +62,12 @@ class NotificationsService extends GetxService {
         // Messaging's onRegistered only fires on first registration, so
         // read the FID directly on every launch and follow its changes.
         _fidSub = FirebaseInstallations.instance.onIdChange.listen(_setFid);
-        unawaited(FirebaseMessaging.instance.register());
+        // Unawaited, so the surrounding try/catch can't see its errors.
+        unawaited(
+          FirebaseMessaging.instance.register().catchError((Object e) {
+            debugPrint('FCM register failed: $e');
+          }),
+        );
         unawaited(FirebaseInstallations.instance.getId().then(_setFid));
         final Rx<Locale>? locale = _locale;
         if (locale != null) {
